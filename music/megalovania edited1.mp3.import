@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcxvx5obifhj5"
+path="res://.godot/imported/megalovania edited1.mp3-a982ed9aab5f5cfe806a6f2b1182daa9.mp3str"
+
+[deps]
+
+source_file="res://music/megalovania edited1.mp3"
+dest_files=["res://.godot/imported/megalovania edited1.mp3-a982ed9aab5f5cfe806a6f2b1182daa9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdsvv2hkqq1xx"
+path="res://.godot/imported/undertale_100. MEGALOVANIA.mp3-7e092c5dfb26b268cf5e46903c598ad0.mp3str"
+
+[deps]
+
+source_file="res://music/undertale_100. MEGALOVANIA.mp3"
+dest_files=["res://.godot/imported/undertale_100. MEGALOVANIA.mp3-7e092c5dfb26b268cf5e46903c598ad0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
