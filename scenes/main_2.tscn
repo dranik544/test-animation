@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://bok58fffff6d6"]
+[gd_scene load_steps=36 format=3 uid="uid://bok58fffff6d6"]
 
 [ext_resource type="Texture2D" uid="uid://d4gukoru47d60" path="res://sprites/loc/sansloc1.png" id="1_43ty5"]
+[ext_resource type="Script" uid="uid://c6ku7dddqbuip" path="res://scenes/main.gd" id="1_hpp66"]
 [ext_resource type="Script" uid="uid://c0f8jwr08la58" path="res://scenes/animation_player.gd" id="1_ugyvg"]
 [ext_resource type="Texture2D" uid="uid://bo75omljpdefv" path="res://sprites/sans/attacks/spr_s_bonestab_v_wide_0.png" id="3_xb34a"]
 [ext_resource type="Texture2D" uid="uid://drfrxkanvkvt8" path="res://sprites/sans/attacks/spr_s_boneloop_out_0.png" id="4_1k1ng"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bb4lgr2k6rrpw" path="res://sprites/spr_dummyknife_0.png" id="6_ghm15"]
 [ext_resource type="Texture2D" uid="uid://c6np2viqatydb" path="res://sprites/spr_stardrop_0.png" id="6_rkluo"]
 [ext_resource type="SpriteFrames" uid="uid://b3j5frow0leuk" path="res://SpriteFrame/sansDefault.tres" id="6_ywx0f"]
+[ext_resource type="Texture2D" uid="uid://mwadd3e6bpgf" path="res://sprites/dust1.png" id="8_alid6"]
 [ext_resource type="Texture2D" uid="uid://qtj854fjdigb" path="res://sprites/spr_heart_0.png" id="8_e1hce"]
 [ext_resource type="AudioStream" uid="uid://bcxvx5obifhj5" path="res://music/megalovania edited1.mp3" id="8_r4383"]
 [ext_resource type="Shader" uid="uid://cyr38hmbt6csw" path="res://scenes/dust.gdshader" id="9_c40c1"]
@@ -22,6 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://ul11kp16p8m4" path="res://sounds/angry-roblox.mp3" id="17_kieih"]
 [ext_resource type="AudioStream" uid="uid://btyo8b51v7oyw" path="res://sounds/knife-pressure-zone.mp3" id="18_dhr3r"]
 [ext_resource type="AudioStream" uid="uid://bbo7qr488b5su" path="res://sounds/cartoon-falling.mp3" id="20_basp2"]
+[ext_resource type="AudioStream" uid="uid://66j6exj586ap" path="res://music/hd-stardust-crusaders-za-warudo_1.mp3" id="24_eq8gu"]
+[ext_resource type="AudioStream" uid="uid://ji5jlopei2eq" path="res://sounds/undertale.mp3" id="25_j165q"]
 
 [sub_resource type="Animation" id="Animation_tefeu"]
 length = 0.001
@@ -385,6 +389,90 @@ tracks/29/keys = {
 "update": 0,
 "values": [-1.0472]
 }
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("music:volume_db")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("dust:modulate")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("sans:modulate")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("frisk:flip_h")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("soundtimestop:playing")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Label:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("soundendlabel:playing")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_jyhfs"]
 resource_name = "anim1"
@@ -511,7 +599,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_43ty5"]
 resource_name = "anim2"
-length = 99.0
+length = 104.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -519,10 +607,10 @@ tracks/0/path = NodePath("Camera2D/fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 1, 41, 41.1, 41.2, 41.3, 41.4, 41.5, 41.6, 41.7, 41.8, 41.9, 42.2333, 49.5, 50, 51.0333, 51.5),
-"transitions": PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.5, 1, 41, 41.1, 41.2, 41.3, 41.4, 41.5, 41.6, 41.7, 41.8, 41.9, 42.2333, 49.5, 50, 51.0333, 51.5, 102, 103),
+"transitions": PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -531,10 +619,10 @@ tracks/1/path = NodePath("frisk:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4, 4.5, 10.5, 42.2, 43.5333, 43.6, 43.8333, 44.1333, 44.2, 46.5333, 46.6, 46.8333, 47, 68, 74, 74.2, 74.5, 76, 78),
-"transitions": PackedFloat32Array(1, 1, 1, 0, 1, 2, 0.5, 2, 1, 0, 2, 0.5, 1.3, 0, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4, 4.5, 10.5, 42.2, 43.5333, 43.6, 43.8333, 44.1333, 44.2, 46.5333, 46.6, 46.8333, 47, 68, 74, 74.2, 74.5, 76, 78, 78.2, 78.3481, 88, 88.1, 88.2, 88.2923, 88.4, 89, 89.2667, 92, 93.5),
+"transitions": PackedFloat32Array(1, 1, 1, 0, 1, 2, 0.5, 2, 1, 0, 2, 0.5, 1.3, 0, 1, 1, 1, 1, 1, 2, 0.5, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1),
 "update": 0,
-"values": [Vector2(60, 150), Vector2(60, 150), Vector2(60, 200), Vector2(540, 200), Vector2(351, 200), Vector2(351, 200), Vector2(351, 205), Vector2(351, 135), Vector2(351, 205), Vector2(351, 200), Vector2(351, 200), Vector2(351, 205), Vector2(351, 135), Vector2(275, 100), Vector2(120, 175), Vector2(120, 175), Vector2(174.999, 176.9), Vector2(257.5, 194), Vector2(670, 194), Vector2(695, 200)]
+"values": [Vector2(60, 150), Vector2(60, 150), Vector2(60, 200), Vector2(540, 200), Vector2(351, 200), Vector2(351, 200), Vector2(351, 205), Vector2(351, 135), Vector2(351, 205), Vector2(351, 200), Vector2(351, 200), Vector2(351, 205), Vector2(351, 135), Vector2(275, 100), Vector2(120, 175), Vector2(120, 175), Vector2(174.999, 176.9), Vector2(257.5, 194), Vector2(670, 194), Vector2(695, 210), Vector2(700, 206), Vector2(703, 210), Vector2(703, 210), Vector2(700, 210), Vector2(703, 210), Vector2(700, 210), Vector2(703, 210), Vector2(703, 210), Vector2(703, 197), Vector2(703, 197), Vector2(823, 197)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -543,10 +631,10 @@ tracks/2/path = NodePath("frisk:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4, 4.5, 43.6, 43.7333, 43.9333, 44.1333, 46.6, 46.7333, 68, 74),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4, 4.5, 43.6, 43.7333, 43.9333, 44.1333, 46.6, 46.7333, 68, 74, 92),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"down", &"down", &"right", &"down", &"left", &"up", &"right", &"down", &"left", &"down", &"right"]
+"values": [&"down", &"down", &"right", &"down", &"left", &"up", &"right", &"down", &"left", &"down", &"right", &"right"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -555,10 +643,10 @@ tracks/3/path = NodePath("frisk:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5, 3, 68, 70.5, 71, 72, 72.5),
-"transitions": PackedFloat32Array(1, 1, 0, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.5, 3, 68, 70.5, 71, 72, 72.5, 87, 87.5),
+"transitions": PackedFloat32Array(1, 1, 0, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -593,7 +681,7 @@ tracks/6/path = NodePath("Camera2D/dialog:visible_ratio")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 15, 17, 19, 21, 23.5, 25.5, 27.5, 29.5, 31.5, 33.5, 35.5, 37.6, 39, 52.5, 55, 59, 61.5, 82, 83.5),
+"times": PackedFloat32Array(0, 15, 17, 19, 21, 23.5, 25.5, 27.5, 29.5, 31.5, 33.5, 35.5, 37.6, 39, 52.5, 55, 59, 61.5, 82, 82.2667),
 "transitions": PackedFloat32Array(0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0),
 "update": 0,
 "values": [1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.85, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
@@ -605,8 +693,8 @@ tracks/7/path = NodePath("frisk")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(4, 10.5, 74),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(4, 10.5, 74, 75.9988, 78.3333, 92),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [&"", 1.0, false],
 "method": &"play"
@@ -615,6 +703,15 @@ tracks/7/keys = {
 "method": &"stop"
 }, {
 "args": [&"", 3.0, false],
+"method": &"play"
+}, {
+"args": [&"", 0.2, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}, {
+"args": [&"", 1.0, false],
 "method": &"play"
 }]
 }
@@ -628,7 +725,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(5.73333, 10.5, 12, 14, 37.5, 37.6, 38.5, 42.2, 46.7667, 46.8333, 46.9667, 51, 68, 70, 73.996, 74.196, 74.496, 75.996),
 "transitions": PackedFloat32Array(1, 1, -2, 1, 0, 0.5, 0, 1, 0, 1, 0, 1, -2, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(160, 120), Vector2(544, 120), Vector2(544, 120), Vector2(637, 120), Vector2(637, 120), Vector2(703, 178), Vector2(637, 120), Vector2(402, 120), Vector2(402, 120), Vector2(396, 120), Vector2(402, 120), Vector2(674, 120), Vector2(674, 120), Vector2(120, 175), Vector2(120, 175), Vector2(174.999, 176.9), Vector2(257.5, 194), Vector2(670, 194)]
+"values": [Vector2(160, 120), Vector2(544, 120), Vector2(544, 120), Vector2(637, 120), Vector2(637, 120), Vector2(703, 178), Vector2(637, 120), Vector2(402, 120), Vector2(402, 120), Vector2(396, 120), Vector2(402, 120), Vector2(674, 120), Vector2(674, 120), Vector2(160, 120), Vector2(160, 120), Vector2(174.999, 120), Vector2(257.5, 120), Vector2(670, 120)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -649,10 +746,10 @@ tracks/10/path = NodePath("Camera2D:zoom")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(37.5, 37.6, 38.5, 68, 70),
-"transitions": PackedFloat32Array(0, 0.5, 1, -2, 1),
+"times": PackedFloat32Array(37.5, 37.6, 38.5),
+"transitions": PackedFloat32Array(0, 0.5, 1),
 "update": 0,
-"values": [Vector2(4, 4), Vector2(8, 8), Vector2(4, 4), Vector2(4, 4), Vector2(7, 7)]
+"values": [Vector2(4, 4), Vector2(8, 8), Vector2(4, 4)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -685,7 +782,7 @@ tracks/13/path = NodePath("music:playing")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(42, 48),
+"times": PackedFloat32Array(42, 50),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -745,10 +842,10 @@ tracks/18/path = NodePath("frisk:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 46.8333, 47, 68, 74, 74.2, 78),
-"transitions": PackedFloat32Array(1, 1, 0, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 46.8333, 47, 68, 74, 74.2, 76, 78, 78.2, 78.3481, 89, 89.5, 89.7),
+"transitions": PackedFloat32Array(1, 1, 0, 1, 1, 0, 1, 2, 0.5, 1, 0.5, 2, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.785398, 0.0, 0.0, 0.174533, 1.5708]
+"values": [0.0, 0.0, 0.785398, 0.0, 0.0, 0.174533, 0.174533, -1.5708, -1.48353, -1.5708, -1.5708, 0.174533, 0.0]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -781,10 +878,10 @@ tracks/21/path = NodePath("ketchup:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(65, 65.2, 66, 66.2, 66.2007, 66.6, 67),
-"transitions": PackedFloat32Array(0.5, 1, 2, 1, 0.615572, 1.93187, 1),
+"times": PackedFloat32Array(65, 65.2, 66, 66.2, 66.2007, 66.5, 66.8, 67.5, 76, 77.7667),
+"transitions": PackedFloat32Array(0.5, 1, 2, 1, 0.5, 2, 0.5, 1, 0.5, 1),
 "update": 0,
-"values": [Vector2(749, 204), Vector2(743, 204), Vector2(743, 204), Vector2(743, 204), Vector2(743, 209), Vector2(688, 167), Vector2(670, 209)]
+"values": [Vector2(749, 204), Vector2(743, 204), Vector2(743, 204), Vector2(743, 204), Vector2(743, 209), Vector2(743, 175), Vector2(743, 209), Vector2(670, 209), Vector2(670, 209), Vector2(661, 209)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
@@ -793,10 +890,10 @@ tracks/22/path = NodePath("ketchup:rotation")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(65, 65.2, 66, 66.2, 67),
-"transitions": PackedFloat32Array(0.5, 1, 2, 0.5, 1),
+"times": PackedFloat32Array(65, 65.2, 66, 66.2, 66.5, 66.8, 67.5),
+"transitions": PackedFloat32Array(0.5, 1, 2, 0.5, 2, 0.5, 1),
 "update": 0,
-"values": [0.0, -0.436332, -0.436332, -0.959931, -2.18166]
+"values": [0.0, -0.436332, -0.436332, -0.959931, 0.820305, 2.61799, -2.18166]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
@@ -853,10 +950,10 @@ tracks/27/path = NodePath("knife:position")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"times": PackedFloat32Array(73.9877, 74.1877, 74.4877, 75.9877, 78),
-"transitions": PackedFloat32Array(1, 1, 1, 0.840896, 1),
+"times": PackedFloat32Array(73.0333, 73.9877, 74.1877, 74.4877, 75.9877, 78, 86.2, 86.5, 86.6, 86.7),
+"transitions": PackedFloat32Array(0, 1, 1, 1, 0.840896, 1, 2, 0.5, 2, 1),
 "update": 0,
-"values": [Vector2(121, 175), Vector2(178.999, 176.9), Vector2(263.5, 194), Vector2(676, 194), Vector2(745, 190)]
+"values": [Vector2(134, 184), Vector2(124, 184), Vector2(179, 185), Vector2(260, 203), Vector2(671, 201), Vector2(745, 190), Vector2(745, 190), Vector2(745, 212), Vector2(745, 209), Vector2(745, 212)]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
@@ -865,10 +962,10 @@ tracks/28/path = NodePath("soundketchupzhvih:playing")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(75.9667),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(75.9667, 86.1333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
@@ -894,6 +991,104 @@ tracks/30/keys = {
 "values": [{
 "args": [],
 "method": &"playanimdust"
+}]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("music:volume_db")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(49, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("dust:modulate")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(84.4923, 85.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("sans:modulate")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(84.5, 85.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("frisk:flip_h")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 91, 91.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("soundtimestop:playing")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(75.9333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Label:visible")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0, 95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("soundendlabel:playing")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(94.8667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/38/type = "method"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath(".")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(104),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"closegame"
 }]
 }
 
@@ -961,6 +1156,7 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [node name="main2" type="Node2D"]
+script = ExtResource("1_hpp66")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1019,6 +1215,11 @@ texture = ExtResource("6_ghm15")
 position = Vector2(749, 204)
 texture = ExtResource("16_6fig5")
 
+[node name="dust" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(750, 208)
+texture = ExtResource("8_alid6")
+
 [node name="frisk" type="AnimatedSprite2D" parent="."]
 position = Vector2(41, -18)
 sprite_frames = ExtResource("4_r4383")
@@ -1047,6 +1248,17 @@ texture = ExtResource("5_ywx0f")
 position = Vector2(803, 120)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_ywx0f")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 510.0
+offset_right = 830.0
+offset_bottom = 240.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_xb34a")
+text = "
+ Если вы убьёте Санса за один удар, то ничего не прозойдёт."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 120)
@@ -1107,3 +1319,9 @@ pitch_scale = 0.75
 [node name="soundketchupzhvih" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_basp2")
 pitch_scale = 0.7
+
+[node name="soundtimestop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_eq8gu")
+
+[node name="soundendlabel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_j165q")
