@@ -1,15 +1,28 @@
-[gd_scene load_steps=17 format=3 uid="uid://cp2rfdsiflus0"]
+[gd_scene load_steps=24 format=3 uid="uid://cp2rfdsiflus0"]
 
 [ext_resource type="Texture2D" uid="uid://byrrj3rqv03bx" path="res://sprites/loc/tualet delrune 1.png" id="1_144u1"]
 [ext_resource type="AudioStream" uid="uid://buee2lmwkw7qf" path="res://sounds/mus_dooropen.mp3" id="1_kxms2"]
 [ext_resource type="AudioStream" uid="uid://cg576874r4c37" path="res://sounds/mus_dununnn.mp3" id="2_kxms2"]
 [ext_resource type="AudioStream" uid="uid://6jaf0r5o0fcc" path="res://sounds/maro-jump-sound-effect_1.mp3" id="2_ngkwn"]
+[ext_resource type="Texture2D" uid="uid://ctonfyxfl72ds" path="res://sprites/toriel/spr_face_torielmad_0.png" id="2_s2vyf"]
 [ext_resource type="Script" uid="uid://c0f8jwr08la58" path="res://scenes/animation_player.gd" id="2_ve0ab"]
+[ext_resource type="AudioStream" uid="uid://cvyin4vasjxc1" path="res://sounds/mus_dialup_0.mp3" id="3_3m4ub"]
 [ext_resource type="AudioStream" uid="uid://bc8ikq0rxs1s2" path="res://sounds/zvuk-unitaza.mp3" id="3_pn7vl"]
-[ext_resource type="AudioStream" uid="uid://dyqcf2c03fhv8" path="res://sounds/undertale-sound-effect-undernet-notification.mp3" id="4_8wt8r"]
+[ext_resource type="Texture2D" uid="uid://cqxtp6r7lsqx8" path="res://sprites/toriel/spr_face_torielscared_1.png" id="3_veabv"]
+[ext_resource type="AudioStream" uid="uid://dkysvjptadms2" path="res://sounds/mus_dialup_1.mp3" id="4_8ouk6"]
 [ext_resource type="SpriteFrames" uid="uid://biwejwq5beof0" path="res://SpriteFrame/friskDefault.tres" id="4_ngkwn"]
+[ext_resource type="Texture2D" uid="uid://dl2cd18hbuon" path="res://sprites/toriel/spr_face_torielmadblink_0.png" id="4_veabv"]
 [ext_resource type="FontFile" uid="uid://bjruqy2fcyc5f" path="res://fonts/Undertale-Battle-Font.ttf" id="5_8wt8r"]
 [ext_resource type="Texture2D" uid="uid://cjpxp6nt4yr7j" path="res://sprites/dialog1.png" id="6_3m4ub"]
+[ext_resource type="AudioStream" uid="uid://jlyb1t142t53" path="res://sounds/undertale-sound-effect-you-win.mp3" id="7_3m4ub"]
+[ext_resource type="AudioStream" uid="uid://hsojwh72vjmp" path="res://sounds/mus_birdnoise.mp3" id="13_8ouk6"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_8ouk6"]
+frames = 2
+speed_scale = 7.0
+frame_0/texture = ExtResource("2_s2vyf")
+frame_1/texture = ExtResource("3_veabv")
+frame_1/duration = 1.0
 
 [sub_resource type="Animation" id="Animation_tefeu"]
 length = 0.001
@@ -148,74 +161,122 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/11/path = NodePath("AudioStreamPlayer:playing")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [false]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("AudioStreamPlayer:playing")
+tracks/12/path = NodePath("kris:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("kris:frame")
+tracks/13/path = NodePath("Camera2D/text1:text")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [""]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("text1:text")
+tracks/14/path = NodePath("Camera2D/text1:scale")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("text1:scale")
+tracks/15/path = NodePath("Camera2D/text1:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("text1:modulate")
+tracks/16/path = NodePath("music:stream")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_8ouk6")]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("music:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("music:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [-15.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Camera2D/dialogface:texture")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_8ouk6")]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Camera2D/dialogface:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jyhfs"]
@@ -468,10 +529,10 @@ tracks/0/path = NodePath("Camera2D/fade:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 58, 59),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 58, 59, 61.5, 62),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -480,10 +541,10 @@ tracks/1/path = NodePath("Camera2D/dialog:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 8, 11, 15, 18, 22, 25.5, 29.5, 34, 40.5, 43.5, 50.5, 53.5, 57),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 8, 11, 15, 18, 22, 25.5, 29.5, 34, 40.5, 43.5, 50.5, 53.5, 57, 62.5, 79.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false, true, true, false, true, true, false, true, false, true, true, false]
+"values": [false, true, false, true, true, false, true, true, false, true, false, true, true, false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -548,118 +609,166 @@ tracks/5/path = NodePath("AudioStreamPlayer:stream")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.5, 6.3, 7, 24.5, 34.5, 40.2333, 44.5, 50.2333, 57),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 0, 1, 0, 1, 1),
+"times": PackedFloat32Array(1.5, 6.3, 7, 11, 12.1726, 13.3333, 14.397, 24.5, 34.5, 40.2333, 44.5, 50.2333, 57),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1),
 "update": 1,
-"values": [ExtResource("1_kxms2"), ExtResource("2_ngkwn"), ExtResource("2_ngkwn"), ExtResource("2_kxms2"), ExtResource("3_pn7vl"), ExtResource("4_8wt8r"), ExtResource("3_pn7vl"), ExtResource("4_8wt8r"), ExtResource("3_pn7vl")]
+"values": [ExtResource("1_kxms2"), ExtResource("2_ngkwn"), ExtResource("2_ngkwn"), ExtResource("3_3m4ub"), ExtResource("4_8ouk6"), ExtResource("3_3m4ub"), ExtResource("4_8ouk6"), ExtResource("2_kxms2"), ExtResource("3_pn7vl"), ExtResource("7_3m4ub"), ExtResource("3_pn7vl"), ExtResource("7_3m4ub"), ExtResource("3_pn7vl")]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/6/path = NodePath("AudioStreamPlayer:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.5, 6.3, 7, 24.5, 34.5, 40.2333, 44.5, 50.2333, 57),
-"transitions": PackedFloat32Array(0, 1, 1, 1, 0, 0, 0, 0, 1),
-"update": 0,
-"values": [-22.5, -22.5, -22.5, -22.5, -22.5, -22.5, -22.5, -22.5, -22.5]
+"times": PackedFloat32Array(1.5, 6.3, 7, 11, 12.1667, 13.3333, 14.3911, 24.5, 34.5, 40.2667, 44.5, 50.2667, 57, 57.8333, 58.4333, 59.1825),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("AudioStreamPlayer:playing")
+tracks/7/path = NodePath("kris:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1.5, 6.3, 7, 24.5, 34.5, 40.2667, 44.5, 50.2667, 57, 57.8333, 58.4333, 59.1825),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true, true, true, true, true, true, true, true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("kris:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(3.5, 5.5, 6.43333, 6.46667, 6.66667, 6.86667, 6.9, 7, 7.03333, 7.23333, 7.43333, 7.46667, 23.0333, 24.5, 34.1, 34.2667, 34.3667),
 "transitions": PackedFloat32Array(1, 1, 2, 0.5, 2, 1, 1, 2, 0.5, 2, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(240, 135), Vector2(75, 135), Vector2(75, 135), Vector2(75, 140), Vector2(75, 115), Vector2(75, 140), Vector2(75, 135), Vector2(75, 135), Vector2(75, 140), Vector2(75, 115), Vector2(75, 140), Vector2(75, 135), Vector2(75, 135), Vector2(205, 135), Vector2(205, 135), Vector2(181, 135), Vector2(181, 124)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D/dialog:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8, 15, 18, 25.5, 29.5, 40.5, 50.5, 53.5, 62.5, 65.5, 69, 73),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["* Какой чудесный сегодня день!", "* Так, погодите-ка, сегодня же проект.", "* Нет, сегодня [color=#ff0000][shake]ОТСТОЙНЫЙ[/shake][color=] день!", "* Чёрт! Мне сейчас [wave]ООООЧЕНЬ[/wave] захотелось смыть туалет!", "* Это [wave]ТОООЧНО[/wave] не потому что я хочу опоздать в школу", "[color=#ffe600]ПОЗДРАВЛЯЕМ! ВЫ СМЫЛИ УНИТАЗ!", "[color=#ffe600]ПОЗДРАВЛЯЕМ! ВЫ СМЫЛИ УНИТАЗ ВО ВТОРОЙ РАЗ!", "* Емае, а эта [color=#ffe600]жёлтая надпись[color=] такая [wave]приятная[/wave]...", "* Крис, прекрати смывать унитаз!", "* Счётчик воды не бесконечен!", "* Ты сейчас сливаешь мои деньги в унитаз!", "* Выходи отсюда сейчас же, иначе я выбью дверь и выброшу тебя в окно, мелкий говнюк!"]
+}
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Camera2D/dialog:text")
+tracks/9/path = NodePath("Camera2D/dialog:visible_ratio")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(8, 15, 18, 25.5, 29.5, 40.5, 50.5, 53.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": ["* Какой чудесный сегодня день!", "* Так, погодите-ка, сегодня же проект.", "* Нет, сегодня [color=#ff0000][shake]ОТСТОЙНЫЙ[/shake][color=] день!", "* Чёрт! Мне сейчас [wave]ООООЧЕНЬ[/wave] захотелось смыть туалет!", "* Это [wave]ТОООЧНО[/wave] не потому что я хочу опоздать в школу", "[color=#ffe600]ПОЗДРАВЛЯЕМ! ВЫ СМЫЛИ УНИТАЗ!", "[color=#ffe600]ПОЗДРАВЛЯЕМ! ВЫ СМЫЛИ УНИТАЗ ВО ВТОРОЙ РАЗ!", "* Емае, а эта [color=#ffe600]жёлтая надпись[color=] такая [wave]приятная[/wave]..."]
+"times": PackedFloat32Array(8, 9.5, 15, 16.5, 18, 19.5, 25.5, 27, 29.5, 31, 40.5, 42, 50.5, 52, 53.5, 55, 62.5, 64, 65.5, 67, 69, 70.5, 73, 75.5),
+"transitions": PackedFloat32Array(1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Camera2D/dialog:visible_ratio")
+tracks/10/path = NodePath("kris:frame")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(8, 9.5, 15, 16.5, 18, 19.5, 25.5, 27, 29.5, 31, 40.5, 42, 50.5, 52, 53.5, 55),
-"transitions": PackedFloat32Array(1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("kris:frame")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(24.5333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("text1:text")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Camera2D/text1:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(59.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["Спустя 2 минуты..."]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("text1:scale")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Camera2D/text1:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(59.5, 61.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("text1:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Camera2D/text1:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(59.5, 60, 61, 61.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("music:stream")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_8ouk6")]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("music:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("music:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 21, 24.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-15.0, -15.0, -80.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Camera2D/dialogface:texture")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 62.5, 64, 65.4977, 66.9977, 69, 70.5, 73, 75.5),
+"transitions": PackedFloat32Array(1, 0, 1, 0, 1, 0, 1, 0, 1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_8ouk6"), SubResource("AnimatedTexture_8ouk6"), ExtResource("4_veabv"), SubResource("AnimatedTexture_8ouk6"), ExtResource("4_veabv"), SubResource("AnimatedTexture_8ouk6"), ExtResource("4_veabv"), SubResource("AnimatedTexture_8ouk6"), ExtResource("4_veabv")]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Camera2D/dialogface:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 62.5, 79.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tbgi4"]
@@ -727,6 +836,13 @@ text = "привет! я делаю свою анимацию! я такой к�
 scroll_active = false
 scroll_following = true
 
+[node name="dialogface" type="TextureRect" parent="Camera2D"]
+offset_left = 110.0
+offset_top = -72.0
+offset_right = 150.0
+offset_bottom = -32.0
+texture = SubResource("AnimatedTexture_8ouk6")
+
 [node name="fade" type="ColorRect" parent="Camera2D"]
 offset_left = -160.0
 offset_top = -120.0
@@ -734,17 +850,21 @@ offset_right = 160.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
-[node name="music" type="AudioStreamPlayer" parent="."]
-autoplay = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="text1" type="Label" parent="."]
-offset_right = 320.0
-offset_bottom = 240.0
+[node name="text1" type="Label" parent="Camera2D"]
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
 pivot_offset = Vector2(160, 120)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_8wt8r")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_8ouk6")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
